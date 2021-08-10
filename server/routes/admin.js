@@ -1,9 +1,11 @@
-const express = require('express');
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
+const competeController = require('../controllers/adminController/CompeteController')
 
+router.get('/compete/:id', competeController.get)
+router.get('/compete', competeController.getAll)
+router.post('/compete', competeController.create)
+router.put('/compete/:id', competeController.update)
+router.delete('/compete/:id', competeController._delete)
 
-router.get('/', function(req, res, next) {
-  res.send('users');
-});
-
-module.exports = router;
+module.exports = router

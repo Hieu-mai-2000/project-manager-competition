@@ -3,10 +3,10 @@ const adminRoute = require('./admin')
 
 
 function routes(app){
-  app.use('/admin',adminRoute)
+  app.use('/api/admin',adminRoute)
 
   app.use('/',function(req, res, next) {
-    res.status(404).json(message:'NOT FOUND');
+    res.status(404).json({message:'NOT FOUND'});
   })
 }
 
