@@ -4,7 +4,7 @@ import queryString from 'query-string';
 const baseURL =
   (process.env.REACT_APP_API
     ? process.env.REACT_APP_API
-    : 'http://localhost:5000') + '/api';
+    : 'https://demo-with-nodejs.herokuapp.com') + '/api';
 
 const axiosClient = axios.create({
   baseURL,
