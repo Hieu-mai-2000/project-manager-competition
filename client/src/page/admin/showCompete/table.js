@@ -20,6 +20,8 @@ const useStyles = makeStyles((theme) => ({
 export default function TableCompetition() {
 	const classes = useStyles()
 	const [competes, setCompetes] = useState([])
+
+	
 	useEffect(() => {
 		async function getApi() {
 			try {
