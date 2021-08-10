@@ -26,18 +26,21 @@ function Login(props) {
 					control={<Checkbox value="remember" color="primary" />}
 					label="Remember me"
 				/>
-				<Button
-					type="submit"
-					fullWidth
-					variant="contained"
-					color="primary"
-					className={classes.submit}
-				>
-					Login
-				</Button>
+				<Link to="/admin">
+					<Button
+						type="submit"
+						fullWidth
+						variant="contained"
+						color="primary"
+						className={classes.submit}
+					>
+						Login
+					</Button>
+				</Link>
+
 				<Grid container>
 					<Grid item xs>
-						<Link href="#" variant="body2">
+						<Link to="#" variant="body2">
 							Forgot password?
 						</Link>
 					</Grid>

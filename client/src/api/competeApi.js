@@ -2,23 +2,23 @@ import axios from '../config/axios'
 
 const CompeteApi = {
 	create: (params) => {
-		const url = '/user/competitions'
+		const url = 'admin/compete'
 		return axios.post(url, { ...params })
 	},
 	getAll: () => {
-		const url = '/user/competitions'
+		const url = 'admin/compete'
 		return axios.get(url)
 	},
     get: (id) => {
-		const url = '/user/competitions'
+		const url = 'admin/compete'
 		return axios.get(url + `/${id}`)
 	},
 	update: (id,params) => {
-		const url = '/user/competitions'
+		const url = 'admin/compete'
 		return axios.put(url + `/${id}`,{...params})
 	},
 	delete: (id) => {
-		const url = '/user/competitions'
+		const url = 'admin/compete'
 		return axios.delete(url + `/${id}`)
 	},
 }

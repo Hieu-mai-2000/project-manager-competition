@@ -26,7 +26,6 @@ export default function TableCompetition() {
 			try {
 				const reponses = await competeApi.getAll()
 				setCompetes(reponses)
-				console.log(reponses)
 			} catch (error) {
 				console.log(error)
 			}
@@ -39,7 +38,7 @@ export default function TableCompetition() {
 		if (id) {
 			try {
 				await competeApi.delete(id)
-				const UpdateCompetes = competes.filter((compete) => compete.id !== id)
+				const UpdateCompetes = competes.filter((compete) => compete._id !== id)
 				setCompetes(UpdateCompetes)
 			} catch (error) {
 				console.log(error)
@@ -69,16 +68,16 @@ export default function TableCompetition() {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{competes.map((compete) => (
-						<TableRow key={compete.id}>
-							<TableCell>{compete.id}</TableCell>
+					{competes.map((compete, index) => (
+						<TableRow key={compete._id}>
+							<TableCell>{index + 1}</TableCell>
 							<TableCell>{compete.department}</TableCell>
 							<TableCell>{compete.compete}</TableCell>
 							<TableCell>{compete.date}</TableCell>
 							<TableCell align="right">
 								<Box component="span" mr={1}>
-									<Link to={`admin/compete/${compete.id}`}>
-										<Button key={compete.id} variant="contained" id={compete.id} color="primary">
+									<Link to={`admin/compete/${compete._id}`}>
+										<Button key={compete._id} variant="contained" id={compete._id} color="primary">
 											Edit
 										</Button>
 									</Link>
@@ -86,9 +85,9 @@ export default function TableCompetition() {
 
 								<Button
 									onClick={handDelete}
-									key={compete.id}
+									key={compete._id}
 									variant="contained"
-									id={compete.id}
+									id={compete._id}
 									color="secondary"
 								>
 									Delete
