@@ -4,7 +4,7 @@ import queryString from 'query-string';
 const baseURL =
   (process.env.REACT_APP_API
     ? process.env.REACT_APP_API
-    : 'http://localhost:5000') + '/api';
+    : 'https://60fb691891156a0017b4c801.mockapi.io') + '/api';
 
 const axiosClient = axios.create({
   baseURL,

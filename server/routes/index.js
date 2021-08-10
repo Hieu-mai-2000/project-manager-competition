@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const adminRoute = require('./admin')
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-module.exports = router;
+function routes(app){
+  app.use('/admin',adminRoute)
+
+  app.use('/',function(req, res, next) {
+    res.status(404).json(message:'NOT FOUND');
+  })
+}
+
+
+module.exports = routes;
