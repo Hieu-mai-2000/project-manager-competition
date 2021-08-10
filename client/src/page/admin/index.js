@@ -20,7 +20,6 @@ function Admin(props) {
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
            
-            {/* Recent Orders */}
             <Grid item xs={12}>
               <Paper className={classes.paper}>
                 <TableCompetition />
